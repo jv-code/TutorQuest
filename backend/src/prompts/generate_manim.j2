@@ -1,0 +1,28 @@
+Create a Manim Python script with VOICEOVER to explain this long division problem step-by-step:
+
+Question: {{ question }}
+
+Step-by-step explanation (to be narrated):
+{{ explanation }}
+
+Requirements:
+- Create a complete, runnable Manim scene with voiceover
+- Import: from manim import * and from manim_voiceover import VoiceoverScene
+- Import: from manim_voiceover.services.gtts import GTTSService
+- Class MUST inherit from VoiceoverScene (not Scene): class ExplanationScene(VoiceoverScene)
+- In construct(), first set voiceover: self.set_speech_service(GTTSService())
+- Use self.voiceover(text="...") with context manager for each step
+- Inside each voiceover block, show animations that match the spoken text
+- Break the explanation into 4-6 voiceover segments
+- Show the division bracket, dividend, divisor, quotient clearly
+- ONLY use Text() for all text and numbers (NO MathTex, NO Tex, NO LaTeX)
+- Use colors to highlight important parts (YELLOW for quotient, GREEN for answer, BLUE for steps)
+- Use only ASCII characters in code (no unicode symbols like ÷ or ×)
+- Total video should be 20-35 seconds
+
+Example structure:
+with self.voiceover(text="First step explanation"):
+    self.play(Write(step1_text))
+    self.wait(0.5)
+
+CRITICAL: Return ONLY raw Python code. Do NOT wrap in markdown code blocks. Do NOT include ```python or ```. Start directly with imports.

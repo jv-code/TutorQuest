@@ -1,0 +1,11 @@
+fastapi
+httpx
+python-multipart
+anthropic
+supabase
+python-dotenv
+pydantic
+pydantic-settings
+daytona
+jinja2
+svix
