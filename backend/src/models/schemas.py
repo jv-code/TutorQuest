@@ -90,3 +90,29 @@ class UserResponse(BaseModel):
     subscription_status: str = "active"
     created_at: datetime
     updated_at: datetime
+
+
+class StudyCardBase(BaseModel):
+    topic: str
+    explanation: str
+    image_url: str
+    version: int
+
+
+class StudyCardCreateRequest(BaseModel):
+    user_id: str
+    topic: str
+
+
+class StudyCardResponse(StudyCardBase):
+    id: str
+
+
+class StudyCardImproveTextRequest(BaseModel):
+    card_id: str
+    feedback: str
+
+
+class StudyCardImproveImageRequest(BaseModel):
+    card_id: str
+    feedback: str
